@@ -7,7 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "npm start --prefix api",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server-install": "npm install --prefix api",
+    "client-install": "npm install --prefix client",
+    "dev-install": "concurrently \"npm run server-install\" \"npm run client-install\"",
+
   },
   "repository": {
     "type": "git",
