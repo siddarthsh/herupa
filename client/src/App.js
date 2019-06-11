@@ -55,7 +55,11 @@ class App extends Component {
               <PrivateRoute exact path="/gpa" component={Gpa} />
               <PrivateRoute exact path="/timetable" component={Timetable} />
               <PrivateRoute exact path="/calender" component={Calender} />
-              <PrivateRoute exact path="/wifipasswords" component={Wifipasswords} />
+              <PrivateRoute
+                exact
+                path="/wifipasswords"
+                component={Wifipasswords}
+              />
               <PrivateRoute exact path="/societies" component={Societies} />
             </Switch>
           </div>
