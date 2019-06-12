@@ -54,68 +54,70 @@ class Login extends Component {
 
     return (
       <div className="container">
-        <div style={{ marginTop: "4rem" }} className="row">
-          <div className="col s8 offset-s2">
-            <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
-              home
-            </Link>
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
-                <b>Login</b> below
-              </h4>
-              <p className="grey-text text-darken-1">
-                Don't have an account? <Link to="/register">Register</Link>
-              </p>
-            </div>
+        <div className="row justify-content-center">
+          <div className="col-12 col-md-5 col-xl-4 my-5">
+            <h1 className="display-4 text-center mb-3">Sign in</h1>
+
             <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
+              <div className="form-group">
+                <label htmlFor="rollno">Roll No.</label>
                 <input
                   onChange={this.onChange}
                   value={this.state.rollno}
                   error={errors.rollno}
                   id="rollno"
                   type="text"
-                  className={classnames("", {
+                  placeholder="101XXXXXX"
+                  className={classnames("form-control", {
                     invalid: errors.rollno || errors.rollnonotfound
                   })}
                 />
-                <label htmlFor="rollno">Roll No.</label>
                 <span className="red-text">
                   {errors.rollno}
                   {errors.rollnonotfound}
                 </span>
               </div>
-              <div className="input-field col s12">
+              <div className="form-group">
+                <div className="row">
+                  <div className="col">
+                    <label>Password</label>
+                  </div>
+                  <div className="col-auto">
+                    <a
+                      href="/password-reset"
+                      className="form-text small text-muted"
+                    >
+                      Forgot password?
+                    </a>
+                  </div>
+                </div>
                 <input
                   onChange={this.onChange}
                   value={this.state.password}
                   error={errors.password}
                   id="password"
                   type="password"
-                  className={classnames("", {
+                  placeholder="Enter your password"
+                  className={classnames("form-control form-control-appended", {
                     invalid: errors.password || errors.passwordincorrect
                   })}
                 />
-                <label htmlFor="password">Password</label>
                 <span className="red-text">
                   {errors.password}
                   {errors.passwordincorrect}
                 </span>
               </div>
-              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
-                  type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
-                  Login
-                </button>
+              <button
+                type="submit"
+                className="btn btn-lg btn-block btn-primary mb-3"
+              >
+                Sign in
+              </button>
+              <div className="text-center">
+                <small className="text-muted text-center">
+                  Don't have an account yet? <Link to="/register">Sign up</Link>
+                  .
+                </small>
               </div>
             </form>
           </div>
