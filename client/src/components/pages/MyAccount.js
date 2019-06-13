@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-class Dashboard extends Component {
+class MyAccount extends Component {
   render() {
     const { user } = this.props.auth;
     const isMobile = window.innerWidth <= 3000;
@@ -10,7 +10,7 @@ class Dashboard extends Component {
       return (
         <div className="main-content bg-fixed-bottom">
           <div className="header">
-            <div className="container-fluid">
+            <div className="container">
               <div className="header-body">
                 <div className="row align-items-end">
                   <div className="col">
@@ -25,7 +25,33 @@ class Dashboard extends Component {
               </div>
             </div>
           </div>
-        </div>
+            <div className="row">
+              <div className="container">
+                 <div className="col-12 col-lg-6 col-xl">
+                <div className="card">
+                  <div className="card-body">
+                    <div className="row align-items-center">
+                      <div className="col">
+                       <h6 className="card-title text-uppercase text-muted mb-2">
+                       Budget
+                       </h6>
+                       <span className="h2 mb-0">
+                       $24,500
+                       </span>
+                       <span className="badge badge-soft-success mt-n1">
+                        +3.5%
+                       </span>
+                      </div>
+                      <div className="col-auto">
+                       <span className="h2 fe fe-dollar-sign text-muted mb-0"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
       );
     } else {
       return (
@@ -49,7 +75,7 @@ class Dashboard extends Component {
   }
 }
 
-Dashboard.propTypes = {
+MyAccount.propTypes = {
   auth: PropTypes.object.isRequired
 };
 const mapStateToProps = state => ({
@@ -59,4 +85,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   {}
-)(Dashboard);
+)(MyAccount);

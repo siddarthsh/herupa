@@ -1,7 +1,7 @@
 {
-  "name": "herupa",
+  "name": "StudentPass",
   "version": "1.0.0",
-  "description": "MERN application built with Reactjs, Nodejs and MongoDB",
+  "description": "PWA built with Reactjs, Nodejs and MongoDB",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

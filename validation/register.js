@@ -3,17 +3,9 @@ const isEmpty = require("is-empty");
 module.exports = function validateRegisterInput(data) {
   let errors = {};
 // Convert empty fields to an empty string so we can use validator functions
-  data.rollno = !isEmpty(data.rollno) ? data.rollno : "";
   data.email = !isEmpty(data.email) ? data.email : "";
   data.password = !isEmpty(data.password) ? data.password : "";
   data.password2 = !isEmpty(data.password2) ? data.password2 : "";
-// ROllno checks
-  if (Validator.isEmpty(data.rollno)) {
-    errors.rollno = "Roll no is required";
-  }
-  if (!Validator.isLength(data.rollno, { min: 9, max: 9 })) {
-    errors.rollno = "Roll no must be 9 characters";
-  }
 // Email checks
   if (Validator.isEmpty(data.email)) {
     errors.email = "Email field is required";

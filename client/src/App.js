@@ -8,16 +8,12 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 import Navbar from "./components/layout/Navbar";
-import Landing from "./components/pages/Landing";
+import Index from "./components/pages/Index";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
-import Dashboard from "./components/pages/Dashboard";
-import Calender from "./components/pages/Calender";
-import Gpa from "./components/pages/Gpa";
-import Societies from "./components/pages/Societies";
-import Timetable from "./components/pages/Timetable";
-import Wifipasswords from "./components/pages/Wifipasswords";
+import MyAccount from "./components/pages/MyAccount";
+import Error404 from "./components/pages/Error404";
 
 import "./App.css";
 
@@ -47,20 +43,13 @@ class App extends Component {
         <Router>
           <div className="App">
             <Navbar />
-            <Route exact path="/" component={Landing} />
+            <Switch>
+            <Route exact path="/" component={Index} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-            <Switch>
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              <PrivateRoute exact path="/gpa" component={Gpa} />
-              <PrivateRoute exact path="/timetable" component={Timetable} />
-              <PrivateRoute exact path="/calender" component={Calender} />
-              <PrivateRoute
-                exact
-                path="/wifipasswords"
-                component={Wifipasswords}
-              />
-              <PrivateRoute exact path="/societies" component={Societies} />
+
+              <PrivateRoute exact path="/my-account" component={MyAccount} />
+              <Route path="*" component={Error404}/>
             </Switch>
           </div>
         </Router>

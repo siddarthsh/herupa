@@ -9,7 +9,6 @@ class Register extends Component {
   constructor() {
     super();
     this.state = {
-      rollno: "",
       email: "",
       password: "",
       password2: "",
@@ -20,7 +19,7 @@ class Register extends Component {
   componentDidMount() {
     // If logged in and user navigates to Register page, should redirect them to dashboard
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/dashboard");
+      this.props.history.push("/my-account");
     }
   }
 
@@ -40,7 +39,6 @@ class Register extends Component {
     e.preventDefault();
 
     const newUser = {
-      rollno: this.state.rollno,
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2
@@ -59,21 +57,6 @@ class Register extends Component {
             <h1 className="display-4 text-center mb-3">Sign up</h1>
             <form noValidate onSubmit={this.onSubmit}>
               <div className="form-group">
-                <label htmlFor="rollno">Roll No.</label>
-                <input
-                  onChange={this.onChange}
-                  value={this.state.rollno}
-                  error={errors.rollno}
-                  id="rollno"
-                  type="text"
-                  placeholder="101XXXXXX"
-                  className={classnames("form-control", {
-                    invalid: errors.rollno
-                  })}
-                />
-                <span className="red-text">{errors.rollno}</span>
-              </div>
-              <div className="form-group">
                 <label htmlFor="email">Email</label>
                 <input
                   onChange={this.onChange}
@@ -81,7 +64,7 @@ class Register extends Component {
                   error={errors.email}
                   id="email"
                   type="email"
-                  placeholder="name@thapar.edu"
+                  placeholder="example@college.edu"
                   className={classnames("form-control", {
                     invalid: errors.email
                   })}

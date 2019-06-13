@@ -9,22 +9,22 @@ class Login extends Component {
   constructor() {
     super();
     this.state = {
-      rollno: "",
+      email: "",
       password: "",
       errors: {}
     };
   }
 
   componentDidMount() {
-    // If logged in and user navigates to Login page, should redirect them to dashboard
+    // If logged in and user navigates to Login page, should redirect them to Homepage
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/dashboard");
+      this.props.history.push("/");
     }
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/dashboard");
+      this.props.history.push("/");
     }
 
     if (nextProps.errors) {
@@ -42,7 +42,7 @@ class Login extends Component {
     e.preventDefault();
 
     const userData = {
-      rollno: this.state.rollno,
+      email: this.state.email,
       password: this.state.password
     };
 
@@ -60,21 +60,21 @@ class Login extends Component {
 
             <form noValidate onSubmit={this.onSubmit}>
               <div className="form-group">
-                <label htmlFor="rollno">Roll No.</label>
+                <label htmlFor="email">Email</label>
                 <input
                   onChange={this.onChange}
-                  value={this.state.rollno}
-                  error={errors.rollno}
-                  id="rollno"
-                  type="text"
-                  placeholder="101XXXXXX"
+                  value={this.state.email}
+                  error={errors.email}
+                  id="email"
+                  type="email"
+                  placeholder="example@college.edu"
                   className={classnames("form-control", {
-                    invalid: errors.rollno || errors.rollnonotfound
+                    invalid: errors.email || errors.emailnotfound
                   })}
                 />
                 <span className="red-text">
-                  {errors.rollno}
-                  {errors.rollnonotfound}
+                  {errors.email}
+                  {errors.emailnotfound}
                 </span>
               </div>
               <div className="form-group">

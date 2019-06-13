@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Landing extends Component {
+class Error404 extends Component {
   render() {
     return (
       <div className="container-fluid mt-n6">
@@ -10,18 +10,12 @@ class Landing extends Component {
               <div className="row align-items-end">
                 <div className="col">
                   <h1 className="header-title">
-                    <b>MERN</b> application built with
-                    <span style={{ fontFamily: "monospace" }}> Reactjs</span>,
-                    <span style={{ fontFamily: "monospace" }}> Nodejs</span> and
-                    <span style={{ fontFamily: "monospace" }}> MongoDB</span>
+                    <b>404</b> Error
                   </h1>
                 </div>
                 <div className="col-auto" />
               </div>
             </div>
-            <h2 style={{ textAlign: "center" }} className="m-5">
-              Still Underconstruction
-            </h2>
           </div>
         </div>
       </div>
@@ -29,4 +23,4 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+export default Error404;

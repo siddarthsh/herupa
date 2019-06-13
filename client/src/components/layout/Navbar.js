@@ -10,7 +10,7 @@ class Navbar extends Component {
           <div className="col">
             {/* LOGO ----------------------------------------- */}
             <Link to="/" className="navbar-brand">
-              <h2>Herupa</h2>
+              <h2>StudentPass</h2>
             </Link>
           </div>
           <UserButton />

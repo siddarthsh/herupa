@@ -1,6 +1,6 @@
 
 const version = "0.6.11";
-const cacheName = `herupa-${version}`;
+const cacheName = `studentpass-${version}`;
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(cacheName).then(cache => {
