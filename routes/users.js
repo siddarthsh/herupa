@@ -9,6 +9,7 @@ const validateLoginInput = require("../validation/login");
 // Load User model
 const User = require("../models/User");
 
+
 // @route POST api/users/register
 // @desc Register user
 // @access Public
@@ -19,12 +20,11 @@ router.post("/register", (req, res) => {
     if (!isValid) {
       return res.status(400).json(errors);
     }
-  User.findOne({ rollno: req.body.rollno }).then(user => {
+  User.findOne({ email: req.body.email }).then(user => {
       if (user) {
-        return res.status(400).json({ email: "Rollno already exists" });
+        return res.status(400).json({ email: "Email already exists" });
       } else {
         const newUser = new User({
-          rollno: req.body.rollno,
           email: req.body.email,
           password: req.body.password
         });
@@ -54,13 +54,13 @@ const { errors, isValid } = validateLoginInput(req.body);
   if (!isValid) {
     return res.status(400).json(errors);
   }
-const rollno = req.body.rollno;
+const email = req.body.email;
   const password = req.body.password;
-// Find user by rollno
-  User.findOne({ rollno }).then(user => {
+// Find user by email
+  User.findOne({ email }).then(user => {
     // Check if user exists
     if (!user) {
-      return res.status(404).json({ emailnotfound: "roll no not found" });
+      return res.status(404).json({ emailnotfound: "Email not found" });
     }
 // Check password
     bcrypt.compare(password, user.password).then(isMatch => {
@@ -69,7 +69,7 @@ const rollno = req.body.rollno;
         // Create JWT Payload
         const payload = {
           id: user.id,
-          rollno: user.rollno
+          email: user.email
         };
 // Sign token
         jwt.sign(

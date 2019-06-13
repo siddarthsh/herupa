@@ -31,6 +31,10 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
+
+
+
+
 // Serve static assets if we're in production
 if (process.env.NODE_ENV === "production") {
   // Set static folder

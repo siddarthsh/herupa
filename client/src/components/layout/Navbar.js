@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import UserButton from "./UserButton";
+import UserNav from "./UserNav";
+
 
 class Navbar extends Component {
   render() {
@@ -13,7 +14,7 @@ class Navbar extends Component {
               <h2>StudentPass</h2>
             </Link>
           </div>
-          <UserButton />
+          <UserNav />
         </div>
       </nav>
     );

@@ -72,7 +72,7 @@ class Login extends Component {
                     invalid: errors.email || errors.emailnotfound
                   })}
                 />
-                <span className="red-text">
+                <span className="invalid-feedback">
                   {errors.email}
                   {errors.emailnotfound}
                 </span>

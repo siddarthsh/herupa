@@ -11,9 +11,11 @@ import Navbar from "./components/layout/Navbar";
 import Index from "./components/pages/Index";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
+import PasswordReset from "./components/auth/PasswordReset";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import MyAccount from "./components/pages/MyAccount";
 import Error404 from "./components/pages/Error404";
+
 
 import "./App.css";
 
@@ -47,9 +49,9 @@ class App extends Component {
             <Route exact path="/" component={Index} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-
-              <PrivateRoute exact path="/my-account" component={MyAccount} />
-              <Route path="*" component={Error404}/>
+            <Route exact path="/password-reset" component={PasswordReset} />
+            <PrivateRoute exact path="/my-account" component={MyAccount} />
+            <Route path="*" component={Error404}/>
             </Switch>
           </div>
         </Router>

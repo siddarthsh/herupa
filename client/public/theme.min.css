@@ -3470,10 +3470,8 @@ input[type=submit].btn-block {
   font-size: .9375rem;
   position: absolute;
   z-index: 1000;
-  top: 100%;
-  left: 0;
-  display: none;
   float: left;
+  right:3rem;
   min-width: 10rem;
   margin: .125rem 0 0;
   padding: .5rem 0;
@@ -3485,6 +3483,7 @@ input[type=submit].btn-block {
   background-color: #fff;
   background-clip: padding-box;
 }
+
 
 .dropdown-menu-right {
   right: 0;
@@ -4394,7 +4393,7 @@ input[type=submit].btn-block {
 }
 
 .nav-link {
-  display: block;
+  display: flex;
   padding: .5rem 1rem;
 }
 
@@ -4407,6 +4406,10 @@ input[type=submit].btn-block {
   color: #95aac9;
 }
 
+.nav-svg {
+  margin:1px 5px;
+  width:16px;
+}
 .nav-tabs {
   border-bottom: 1px solid #e3ebf6;
 }

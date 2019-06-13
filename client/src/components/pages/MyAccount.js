@@ -25,7 +25,6 @@ class MyAccount extends Component {
               </div>
             </div>
           </div>
-            <div className="row">
               <div className="container">
                  <div className="col-12 col-lg-6 col-xl">
                 <div className="card">
@@ -48,7 +47,6 @@ class MyAccount extends Component {
                     </div>
                   </div>
                 </div>
-              </div>
               </div>
             </div>
           </div>
